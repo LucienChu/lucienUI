@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Title</h1>
+    </div>
+    <div class="cntr">
+      <div class="cntr-innr">
+        <label id="label" class="search" for="inpt_search">
+          <input id="inpt_search" type="text" />
+        </label>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="searchBtn.js"></script> -->
+  <script>
+    document.getElementById("inpt_search").onfocus = function () {
+      document.getElementById("label").classList.add("active");
+    };
+    document.getElementById("inpt_search").onblur = function (event) {
+      console.log("event.target.value", event.target.value);
+      if (event.target.value.length === 0)
+        document.getElementById("label").classList.remove("active");
+    };
+  </script>
+</html>

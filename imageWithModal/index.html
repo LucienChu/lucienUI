@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="iamgeWithModal.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="imageDiv">
+      <img
+        style="width: 100%;"
+        src="https://iport-images.s3.amazonaws.com/media/London/2020/6/25/d16bf3cc9df50835/2020625_93832.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZBHNJ4GA4IB4LEPF%2F20200626%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20200626T062150Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b98b5d33ab1a6c473c2c8a8d646cbe034f71d901ad07d79de3dc3df8b91b873e"
+      />
+    </div>
+    <div id="imageModal" class="imageModal"></div>
+  </body>
+
+  <script>
+    let imageDiv = document.getElementById("imageDiv");
+    imageDiv.onclick = function () {
+      let imageModal = document.getElementById("imageModal");
+      imageModal.classList.toggle("showImage");
+      console.log("object", imageModal.classList);
+    };
+
+    let imageModal = document.getElementById("imageModal");
+    imageModal.onclick = function () {
+      this.classList.toggle("showImage");
+      console.log("object", imageModal.classList);
+    };
+  </script>
+</html>

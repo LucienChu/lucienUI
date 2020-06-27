@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="headerSearch.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header-1" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-1"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input
+            type="text"
+            class="text search-input"
+            placeholder="Type here to search..."
+          />
+        </form>
+      </nav>
+    </header>
+
+    <header id="header-2" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-2"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input
+            type="text"
+            class="text search-input"
+            placeholder="Type here to search..."
+          />
+        </form>
+      </nav>
+    </header>
+
+    <header id="header-3" class="header">
+      <nav class="header-nav">
+        <div class="search-button">
+          <a href="#" class="search-toggle" data-selector="#header-3"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#">For Business</a></li>
+          <li><a href="#">For Personal</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="" class="search-box">
+          <input
+            type="text"
+            class="text search-input"
+            placeholder="Type here to search..."
+          />
+        </form>
+      </nav>
+    </header>
+  </body>
+  <script>
+    // $(".header").on("click", ".search-toggle", function (e) {
+    //   var selector = $(this).data("selector");
+
+    //   $(selector).toggleClass("show").find(".search-input").focus();
+    //   $(this).toggleClass("active");
+
+    //   e.preventDefault();
+    // });
+    document.querySelectorAll(".header").forEach(function (item1, index1) {
+      document
+        .querySelectorAll(".search-toggle")
+        .forEach(function (item2, index2) {
+          item2.addEventListener("click", function (e) {
+            var selector = item2.dataset["selector"];
+
+            document.querySelector(selector).classList.toggle("show");
+            document.querySelector(selector + " .search-input").focus();
+            item2.classList.toggle("active");
+            e.preventDefault();
+          });
+        });
+    });
+  </script>
+</html>
