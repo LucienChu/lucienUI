@@ -41,6 +41,8 @@ body {
 
   li {
     display: inline-block;
+    background: none;
+    transition: all 0.5s;
 
     a {
       color: $blue;
@@ -49,6 +51,14 @@ body {
       position: relative;
       transition: color 0.3s;
       text-decoration: none;
+    }
+
+    &:hover {
+      background-color: red;
+      border-radius: 3px;
+      a {
+        color: #fff;
+      }
     }
   }
 }
@@ -135,7 +145,7 @@ body {
       padding: 0 1em;
       border: 0;
       background-color: transparent;
-      opacity: 0;
+      z-index: -10;
       color: $white;
 
       &::-webkit-input-placeholder {
@@ -149,7 +159,7 @@ body {
       max-height: 40px;
 
       .search-input {
-        opacity: 1;
+        z-index: 10;
       }
     }
   }
@@ -210,7 +220,8 @@ body {
     }
 
     .search-box {
-      width: calc(100% - 5em);
+      // width: calc(100% - 5em);
+      width: 100%;
       transform: translateX(0);
       opacity: 1;
     }

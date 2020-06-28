@@ -32,6 +32,9 @@ body {
 
 .menu li {
   display: inline-block;
+  background: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .menu li a {
@@ -42,6 +45,15 @@ body {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
   text-decoration: none;
+}
+
+.menu li:hover {
+  background-color: red;
+  border-radius: 3px;
+}
+
+.menu li:hover a {
+  color: #fff;
 }
 
 .search-button {
@@ -129,7 +141,7 @@ body {
   padding: 0 1em;
   border: 0;
   background-color: transparent;
-  opacity: 0;
+  z-index: -10;
   color: #fff;
 }
 
@@ -142,7 +154,7 @@ body {
 }
 
 #header-1.show .search-box .search-input {
-  opacity: 1;
+  z-index: 10;
 }
 
 #header-2 {
@@ -220,7 +232,7 @@ body {
 }
 
 #header-2.show .search-box {
-  width: calc(100% - 5em);
+  width: 100%;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1;
